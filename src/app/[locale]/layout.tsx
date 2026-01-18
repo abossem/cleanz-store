@@ -12,7 +12,10 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Cleanz Store",
+  title: {
+    default: "Cleanz Store",
+    template: "%s | Cleanz",
+  },
   description:
     "Discover trendy and affordable clothing for every style. Shop premium quality apparel, casual wear, and fashion-forward pieces.",
 };
