@@ -4,6 +4,7 @@ import "@/src/style/globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/src/i18n/routing";
 import { notFound } from "next/navigation";
+import AuthProvider from "@/src/AuthProvider";
 
 const cairo = Cairo({
   variable: "--font-geist-sans",
@@ -42,7 +43,9 @@ export default async function RootLayout({ children, params }: Props) {
         className={` ${cairo.className} ${cairo.variable} antialiased flex flex-col min-h-screen [&>main]:flex-1`}
       >
         <NextIntlClientProvider>
-          <main>{children}</main>
+          <AuthProvider>
+            <main>{children}</main>
+          </AuthProvider>
         </NextIntlClientProvider>
       </body>
     </html>
