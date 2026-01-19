@@ -4,7 +4,7 @@ import { ChangeLang } from "./ChangeLang";
 
 export const InfoBar = () => {
   return (
-    <div className="bg-primary">
+    <div className="bg-secondary">
       <div className="flex justify-between items-center container py-2">
         <SocialMedia />
 
