@@ -5,6 +5,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/src/i18n/routing";
 import { notFound } from "next/navigation";
 import AuthProvider from "@/src/AuthProvider";
+import { InfoBar } from "@/src/components/home/InfoBar";
 
 const cairo = Cairo({
   variable: "--font-geist-sans",
@@ -44,6 +45,7 @@ export default async function RootLayout({ children, params }: Props) {
       >
         <NextIntlClientProvider>
           <AuthProvider>
+            <InfoBar />
             <main>{children}</main>
           </AuthProvider>
         </NextIntlClientProvider>
