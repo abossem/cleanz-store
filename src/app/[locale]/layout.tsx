@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
-import { Cairo, Geist, Geist_Mono } from "next/font/google";
-import "@/src/style/globals.css";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { routing } from "@/src/i18n/routing";
-import { notFound } from "next/navigation";
 import AuthProvider from "@/src/AuthProvider";
+import { Header } from "@/src/components/home/Header";
 import { InfoBar } from "@/src/components/home/InfoBar";
+import { routing } from "@/src/i18n/routing";
+import "@/src/style/globals.css";
+import type { Metadata } from "next";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { Cairo } from "next/font/google";
+import { notFound } from "next/navigation";
 
 const cairo = Cairo({
   variable: "--font-geist-sans",
@@ -46,6 +47,7 @@ export default async function RootLayout({ children, params }: Props) {
         <NextIntlClientProvider>
           <AuthProvider>
             <InfoBar />
+            <Header locale={locale} />
             <main>{children}</main>
           </AuthProvider>
         </NextIntlClientProvider>

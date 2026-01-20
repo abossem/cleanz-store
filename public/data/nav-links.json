@@ -1,0 +1,42 @@
+{
+  "en": {
+    "links": [
+      {
+        "href": "/",
+        "name": "Home"
+      },
+      {
+        "href": "/list",
+        "name": "Store"
+      },
+      {
+        "href": "/contact-us",
+        "name": "Contact Us"
+      },
+      {
+        "href": "/about-us",
+        "name": "About Us"
+      }
+    ]
+  },
+  "ar": {
+    "links": [
+      {
+        "href": "/ar",
+        "name": "الرئيسية"
+      },
+      {
+        "href": "/list",
+        "name": "المتجر"
+      },
+      {
+        "href": "/contact-us",
+        "name": "اتصل بنا"
+      },
+      {
+        "href": "/about-us",
+        "name": "معلومات عنا"
+      }
+    ]
+  }
+}
