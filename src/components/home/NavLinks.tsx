@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { Link } from "@/src/i18n/navigation";
-import React from "react";
 
 export const NavLinks = ({
   links,
@@ -11,13 +10,11 @@ export const NavLinks = ({
   onHover?: boolean;
   setOnHover: (value: boolean) => void;
 }) => {
-  console.log("on hover", onHover);
-
   return (
     <div
       className={cn(
-        "flex items-center gap-3 bg-amber-500",
-        onHover ? "text-primary" : "",
+        "flex items-center gap-3 text-white",
+        onHover ? "text-primary transition-all duration-300" : "",
       )}
     >
       {links.map((link) => (
@@ -26,6 +23,7 @@ export const NavLinks = ({
           key={link.name}
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
+          className="nav-link"
         >
           {link.name}
         </Link>

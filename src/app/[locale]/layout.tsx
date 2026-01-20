@@ -1,12 +1,13 @@
-import AuthProvider from "@/src/AuthProvider";
-import { Header } from "@/src/components/home/Header";
-import { InfoBar } from "@/src/components/home/InfoBar";
-import { routing } from "@/src/i18n/routing";
-import "@/src/style/globals.css";
 import type { Metadata } from "next";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { Cairo } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Cairo } from "next/font/google";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+
+import AuthProvider from "@/src/AuthProvider";
+import "@/src/style/globals.css";
+
+import { routing } from "@/src/i18n/routing";
+import { Header, InfoBar } from "@/src/components";
 
 const cairo = Cairo({
   variable: "--font-geist-sans",
@@ -42,7 +43,7 @@ export default async function RootLayout({ children, params }: Props) {
       data-preloader="disable"
     >
       <body
-        className={` ${cairo.className} ${cairo.variable} antialiased flex flex-col min-h-screen [&>main]:flex-1`}
+        className={` ${cairo.className} ${cairo.variable} antialiased flex flex-col min-h-screen [&>main]:flex-1 bg-background`}
       >
         <NextIntlClientProvider>
           <AuthProvider>

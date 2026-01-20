@@ -2,6 +2,9 @@
   "home": {
     "title": "Welcome to CleanZ Store",
     "description": "The best place to buy organic and eco-friendly cleaning products.",
-    "changeLang": "Change Language"
+    "changeLang": "Change Language",
+    "login": "Login",
+    "account": "Account",
+    "profile": "Profile"
   }
 }
