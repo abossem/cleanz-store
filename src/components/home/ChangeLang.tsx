@@ -28,7 +28,7 @@ export const ChangeLang = () => {
       {/* Dropdown Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors cursor-pointer"
+        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 min-w-30 transition-colors cursor-pointer"
       >
         <Image
           src={currentFlag.image}
@@ -46,14 +46,14 @@ export const ChangeLang = () => {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-50 min-w-40">
+        <div className="absolute top-full mt-2 bg-white py-2 border border-gray-200 rounded-lg shadow-lg z-50 min-w-40">
           {flags.map((flag) => (
             <button
               key={flag.id}
               onClick={() => handleLanguageChange(flag.id)}
               className={`flex items-center cursor-pointer gap-2 w-full px-4 py-2 text-left hover:bg-gray-100 transition-colors ${
                 flag.id === currentLocale
-                  ? "bg-gray-50 border-l-2 border-primary"
+                  ? "bg-gray-50 border-l-2 border-primary "
                   : ""
               }`}
             >
