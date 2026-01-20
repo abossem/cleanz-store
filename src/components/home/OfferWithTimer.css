@@ -1,0 +1,38 @@
+.offer-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-item {
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+.offer-item.exit {
+  animation: slideOutUp 0.3s ease-in forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+    filter: drop-shadow(0 -4px 8px rgba(0, 0, 0, 0.1));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+    filter: drop-shadow(0 -4px 8px rgba(0, 0, 0, 0.1));
+  }
+}

@@ -3,7 +3,7 @@ import { Facebook, Instagram, X } from "lucide-react";
 
 export const SocialMedia = () => {
   return (
-    <div className="flex items-center gap-2 ">
+    <div className="items-center gap-2 hidden md:flex ">
       <Link
         href="https://www.facebook.com/cleanzstore"
         target="_blank"

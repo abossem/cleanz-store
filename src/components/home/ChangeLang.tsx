@@ -24,7 +24,7 @@ export const ChangeLang = () => {
   };
 
   return (
-    <div className="relative inline-block">
+    <div className="relative hidden md:inline-block">
       {/* Dropdown Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
