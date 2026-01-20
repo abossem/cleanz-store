@@ -1,15 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
+
 import { flags } from "@/src/data/flags";
-import { ChevronDown } from "lucide-react";
 
 export const ChangeLang = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const currentLocale = pathname.split("/")[1] || "en";
   const currentFlag =
@@ -23,8 +25,19 @@ export const ChangeLang = () => {
     setIsOpen(false);
   };
 
+  const clickOutside = (e: MouseEvent) => {
+    if (ref.current && !ref.current.contains(e.target as Node)) setIsOpen(false);
+  };
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    document.addEventListener("click", clickOutside);
+    return () => document.removeEventListener("click", clickOutside);
+  }, [isOpen]);
+
   return (
-    <div className="relative hidden md:inline-block">
+    <div className="relative hidden md:inline-block" ref={ref}>
       {/* Dropdown Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
