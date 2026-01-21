@@ -1,9 +1,9 @@
-import { useTranslations } from "next-intl";
-import { Search } from "lucide-react";
-
 import { cn } from "@/lib/utils";
+import { ShoppingCart } from "lucide-react";
+import { useTranslations } from "next-intl";
+import React from "react";
 
-export const SearchInput = ({ onHover }: { onHover: boolean }) => {
+export const Cart = ({ onHover }: { onHover: boolean }) => {
   const t = useTranslations("home");
   return (
     <div
@@ -12,8 +12,8 @@ export const SearchInput = ({ onHover }: { onHover: boolean }) => {
         onHover ? "text-primary transition-all duration-300" : "",
       )}
     >
-      <p>{t("search")}</p>
-      <Search size={16} />
+      <p>{t("cart")}</p>
+      <ShoppingCart size={16} />
     </div>
   );
 };

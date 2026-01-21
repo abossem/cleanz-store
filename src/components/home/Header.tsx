@@ -10,6 +10,7 @@ import navLinks from "@/public/data/nav-links.json";
 import { Logo } from "./Logo";
 import { NavLinks } from "./NavLinks";
 import { SearchInput } from "./SearchInput";
+import { Cart } from "./Cart";
 
 export const Header = ({ locale }: { locale: string }) => {
   const [onHover, setOnHover] = useState(false);
@@ -19,7 +20,7 @@ export const Header = ({ locale }: { locale: string }) => {
   const { links } = navLinks[locale as "en" | "ar"];
 
   return (
-    <div className={cn(onHover ? "bg-white" : "")}>
+    <header className={cn(onHover ? "bg-white" : "")}>
       <div className="container pt-4 flex justify-between items-center">
         <NavLinks links={links} onHover={onHover} setOnHover={setOnHover} />
         <Logo />
@@ -29,10 +30,10 @@ export const Header = ({ locale }: { locale: string }) => {
           >
             {t(session?.status === "authenticated" ? "account" : "login")}
           </Link>
-          <SearchInput />
-          <span>Cart</span>
+          <SearchInput onHover={onHover} />
+          <Cart onHover={onHover} />
         </div>
       </div>
-    </div>
+    </header>
   );
 };

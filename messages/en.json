@@ -5,6 +5,8 @@
     "changeLang": "Change Language",
     "login": "Login",
     "account": "Account",
-    "profile": "Profile"
+    "profile": "Profile",
+    "cart": "Cart",
+    "search": "Search"
   }
 }

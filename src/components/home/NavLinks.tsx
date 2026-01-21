@@ -11,7 +11,7 @@ export const NavLinks = ({
   setOnHover: (value: boolean) => void;
 }) => {
   return (
-    <div
+    <nav
       className={cn(
         "flex items-center gap-3 text-white",
         onHover ? "text-primary transition-all duration-300" : "",
@@ -28,6 +28,6 @@ export const NavLinks = ({
           {link.name}
         </Link>
       ))}
-    </div>
+    </nav>
   );
 };
