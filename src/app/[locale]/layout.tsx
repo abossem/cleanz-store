@@ -8,6 +8,7 @@ import "@/src/style/globals.css";
 
 import { routing } from "@/src/i18n/routing";
 import { Header, InfoBar } from "@/src/components";
+import { ReduxProvider } from "@/src/ReduxProvider";
 
 const cairo = Cairo({
   variable: "--font-geist-sans",
@@ -48,8 +49,10 @@ export default async function RootLayout({ children, params }: Props) {
         <NextIntlClientProvider>
           <AuthProvider>
             <InfoBar />
-            <Header locale={locale} />
-            <main>{children}</main>
+            <ReduxProvider>
+              <Header locale={locale} />
+              <main>{children}</main>
+            </ReduxProvider>
           </AuthProvider>
         </NextIntlClientProvider>
       </body>
